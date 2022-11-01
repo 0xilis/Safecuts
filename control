@@ -1,0 +1,8 @@
+Package: cum.0xilis.safecuts
+Name: Safecuts
+Author: Snoolie K
+Description: Fix iOS 15.0-15.3.1 hidden actions vuln
+Maintainer: Snoolie K
+Architecture: iphoneos-arm
+Section: Tweaks
+Version: 1.0.0
