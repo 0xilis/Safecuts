@@ -33,7 +33,7 @@
     for (id shortcutActionsObject in origShortcutActions) {
         if ([shortcutActionsObject isKindOfClass:[NSDictionary class]]){
             if ([shortcutActionsObject objectForKey:@"WFWorkflowActionIdentifier"]) {
-            if ([[shortcutActionsObject valueForKey:@"WFWorkflowActionIdentifier"] isEqual:@"is.workflow.actions.conditional"]) {
+            if ([[shortcutActionsObject valueForKey:@"WFWorkflowActionIdentifier"] isEqualToString:@"is.workflow.actions.conditional"]) {
             if ([shortcutsActionsObject objectForKey:@"WFWorkflowActionParameters"]) {
                 if ([[shortcutsActionsObject objectForKey:@"WFWorkflowActionParameters"]objectForKey:@"GroupingIdentifier"]) {
                 if ([conditionalList objectForKey:[[shortcutsActionsObject objectForKey:@"WFWorkflowActionParameters"]objectForKey:@"GroupingIdentifier"]]) {
