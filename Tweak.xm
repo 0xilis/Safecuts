@@ -32,10 +32,7 @@
     
     for (id shortcutActionsObject in origShortcutActions) {
         if ([shortcutActionsObject isKindOfClass:[NSDictionary class]]){
-            if ([shortcutActionsObject objectForKey:@"WFWorkflowActionIdentifier"]) {
             if ([[shortcutActionsObject valueForKey:@"WFWorkflowActionIdentifier"] isEqualToString:@"is.workflow.actions.conditional"]) {
-            if ([shortcutsActionsObject objectForKey:@"WFWorkflowActionParameters"]) {
-                if ([[shortcutsActionsObject objectForKey:@"WFWorkflowActionParameters"]objectForKey:@"GroupingIdentifier"]) {
                 if ([conditionalList objectForKey:[[shortcutsActionsObject objectForKey:@"WFWorkflowActionParameters"]objectForKey:@"GroupingIdentifier"]]) {
                     //GroupingIdentifier in conditionalList already
                     //check the WFControlFlowMode, if @"2" after endif so remove conditional, @"1" needs WFControlFlowMode to be 2, if @"0" needs WFControlFlowMode to be 1 or 2
@@ -60,7 +57,7 @@
                     }
                 } else {
                     //check WFControlFlowMode and add if's GroupingIdentifier if no exist
-                    if ([[shortcutsActionsObject objectForKey:@"WFWorkflowActionParameters"]objectForKey:@"WFControlFlowMode"] == 0) {
+                    if (([[shortcutsActionsObject objectForKey:@"WFWorkflowActionParameters"]objectForKey:@"WFControlFlowMode"] == 0) && ([[shortcutsActionsObject objectForKey:@"WFWorkflowActionParameters"]objectForKey:@"GroupingIdentifier"])) {
                         [conditionalList setObject:@"0" forKey:[[shortcutsActionsObject objectForKey:@"WFWorkflowActionParameters"]objectForKey:@"GroupingIdentifier"]];
                     } else {
                         //strip conditional action from shortcut if bad WFControlFlowMode
@@ -68,10 +65,6 @@
                         shortcutActionsObjectIndex--;
                     }
                 }
-            }
-            
-            }
-            }
         }
         shortcutActionsObjectIndex++;
     }
