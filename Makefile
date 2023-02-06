@@ -9,5 +9,7 @@ TWEAK_NAME = Safecuts
 
 Safecuts_FILES = Tweak.xm
 Safecuts_CFLAGS = -fobjc-arc
+Safecuts_USE_SUBSTRATE = 0
+Safecuts_LOGOS_DEFAULT_GENERATOR = internal
 
 include $(THEOS_MAKE_PATH)/tweak.mk
